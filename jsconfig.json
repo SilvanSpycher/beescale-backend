@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": "client"
+  },
+  "exclude": [
+      "node_modules",
+      "static/dist"
+  ]
+}

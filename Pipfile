@@ -1,0 +1,39 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+"flake8" = "*"
+"autopep8" = "*"
+"fabric3" = "*"
+requests = "*"
+toml = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
+mock = "*"
+requests-mock = "*"
+mixer = "*"
+pytest-env = "*"
+
+[packages]
+django = "*"
+python-dotenv = "*"
+raven = "*"
+"psycopg2-binary" = "*"
+coloredlogs = "*"
+concurrent-log-handler = "*"
+PyYAML = "*"
+colorama = "*"
+dotmap = "*"
+ruamel-yaml = "*"
+djangorestframework = "*"
+django-filter = "*"
+djangorestframework-jwt = "*"
+django-webpack-loader = "*"
+drf-yasg = "*"
+
+[requires]
+python_version = "3.7"
