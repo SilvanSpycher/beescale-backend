@@ -29,7 +29,7 @@ schema_view = get_schema_view(
         title="[PROJECT-NAME] API",
         default_version='v1',
         description="",
-        contact=openapi.Contact(email="sysops+[PROJECT-NAME]@smartfactory.ch"),
+        contact=openapi.Contact(email="silvan.spycher+beescale@gmail.com"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -40,6 +40,7 @@ router.register(r'users', UserViewSet, 'users')
 # @formatter:off
 api_urls = ([
     path('', include(router.urls)),
+    path('', include('scales.urls_v1')),
     path('token/auth/', obtain_jwt_token),
     path('token/verify/', verify_jwt_token),
     path('token/refresh/', refresh_jwt_token),

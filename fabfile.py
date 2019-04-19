@@ -18,13 +18,13 @@ from application.env_utils import Env, load_yaml_env
 # --- START CONFIGURATION HERE ---
 ###
 
-PROJECT_NAME = ''
+PROJECT_NAME = 'beescale'
 
 # The projects git url (prefer SSH over HTTPS).
 REPO_URL = ''
 
 # Set this to the INTERNAL slack channel.
-SLACK_CHANNEL = ''
+SLACK_CHANNEL = '#api'
 
 # Services that need to be restarted after deployment.
 # By default, the following services are restarted:
@@ -40,8 +40,8 @@ ADDITIONAL_MANAGE_TASKS = []
 
 # Configure your target hostnames per environment
 HOSTS = {
-    'test': '',
-    'production': ''
+    'test': 'test.beescale.ch',
+    'production': 'beescale.ch'
 }
 
 ###
@@ -58,12 +58,12 @@ assert SLACK_CHANNEL != '', 'SLACK_CHANNEL is not set, aborting.'
 env.branch = 'master'
 env.user = 'ubuntu'
 
-# set smartfactory defaults
+# set defaults
 UWSGI_HOME = f'/etc/uwsgi/sites'
 USER_HOME = f'/home/{env.user}'
 VENVS_ROOT = f'{USER_HOME}/venvs'
 PROJECT_APP_NAME = 'application'
-SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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'
+SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # import Pipfile for determining python version and dependencies

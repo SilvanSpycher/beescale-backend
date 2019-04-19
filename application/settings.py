@@ -10,7 +10,7 @@ from application.env_utils import load_yaml_env
 
 # --- START CUSTOMIZING HERE ---
 
-ADMINS = [('Project Name', 'webdev+[PROJECT-NAME]@smartfactory.ch')]
+ADMINS = [('Project Name', 'silvan.spycher+beescale@gmail.com')]
 USE_MEMCACHE = False
 
 # --- STOP CUSTOMIZING ---
@@ -29,6 +29,8 @@ SECRET_KEY = ENV.get_password('SECRET_KEY', length=50)
 
 # Application definition
 INSTALLED_APPS = [
+    'scales',
+
     'template_support',
 
     'django.contrib.admin',
@@ -128,20 +130,14 @@ if USE_MEMCACHE:
     }
     KEY_PREFIX = HOST
 
-# Configure Sentry
-RAVEN_CONFIG = {
-    'dsn': ENV.SENTRY.get('DSN', None),
-    'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
-}
-
 # Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        'rest_framework.authentication.SessionAuthentication'
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication'
     ),
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
@@ -190,8 +186,3 @@ except ImportError:
 
 # ENV.persist_to_dotenv()
 ENV.persist()
-
-# make sure certain constraints are being followed
-if not ENV.SENTRY.get('SKIP', False) and (RAVEN_CONFIG is not None and RAVEN_CONFIG['dsn'] is None):
-    print(f'You did not configure a SENTRY_DSN variable in your .env file, aborting application startup.')
-    sys.exit(1)

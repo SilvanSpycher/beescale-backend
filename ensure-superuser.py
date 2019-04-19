@@ -18,7 +18,7 @@ ENV = settings.ENV
 username = ENV.SUPERUSER.USERNAME
 password = ENV.SUPERUSER.PASSWORD
 project_name = ENV.PROJECT_NAME
-email = f'webdev+{project_name}@smartfactory.ch'
+email = f'silvan.spycher+beescale@gmail.com'
 
 if not any([username, password, project_name]):
     print('ERROR: No username/password/project_name specified.')

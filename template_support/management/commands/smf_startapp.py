@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
-    help = 'Creates a new app based on the smartfactory template'
+    help = 'Creates a new app based on the template'
 
     def add_arguments(self, parser):
         parser.add_argument('name', type=str)
