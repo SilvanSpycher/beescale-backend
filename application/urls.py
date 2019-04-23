@@ -26,7 +26,7 @@ from .views import UserViewSet
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="[PROJECT-NAME] API",
+        title="Beescale API",
         default_version='v1',
         description="",
         contact=openapi.Contact(email="silvan.spycher+beescale@gmail.com"),
